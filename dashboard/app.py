@@ -1,5 +1,6 @@
 import streamlit as st
-import pandas as pd
+
+from utils.loader import load_data
 
 # ---------------------------------------------------
 # CONFIGURACIÓN DE LA PÁGINA
@@ -15,9 +16,8 @@ st.set_page_config(
 # ======================================================
 # CARGA DEL DATASET
 # ======================================================
+df = load_data()
 
-@st.cache_data
-def cargar_datos():
     """
     Lee el archivo CSV y devuelve un DataFrame.
     Streamlit almacenará el resultado en caché para
