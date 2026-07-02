@@ -1,20 +1,13 @@
-from pathlib import Path
-
 import pandas as pd
 import streamlit as st
 
-
-# Ruta de la carpeta raíz del proyecto
-BASE_DIR = Path(__file__).resolve().parents[2]
-
-# Ruta del dataset
-DATA_PATH = BASE_DIR / "data" / "ames_housing_clean.csv"
+from config import DATA_PATH
 
 
 @st.cache_data
 def load_data():
     """
-    Carga el dataset limpio y lo almacena en caché.
+    Carga el dataset limpio.
     """
-    df = pd.read_csv(DATA_PATH)
-    return df
+
+    return pd.read_csv(DATA_PATH)
