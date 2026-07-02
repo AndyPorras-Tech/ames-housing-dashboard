@@ -1,21 +1,34 @@
 import streamlit as st
 
+# ---------------------------------------------------
+# CONFIGURACIÓN DE LA PÁGINA
+# ---------------------------------------------------
+
 st.set_page_config(
     page_title="Ames Housing Dashboard",
     page_icon="🏠",
     layout="wide"
 )
 
+# ---------------------------------------------------
+# TÍTULO
+# ---------------------------------------------------
+
 st.title("🏠 Ames Housing Dashboard")
 
-st.subheader("Proyecto de Analítica de Datos")
+st.subheader("Proyecto Final de Analítica de Datos")
+
+st.markdown("---")
 
 st.write(
     """
-    Bienvenido.
+Este dashboard presenta el análisis realizado sobre el conjunto de datos
+**Ames Housing**, incluyendo:
 
-    Este dashboard presenta el análisis exploratorio,
-    los indicadores principales y los modelos predictivos
-    desarrollados sobre el conjunto de datos Ames Housing.
-    """
+- Exploración de datos (EDA)
+- Indicadores principales (KPIs)
+- Visualizaciones interactivas
+- Modelos de Machine Learning
+- Predicción del precio de viviendas
+"""
 )
