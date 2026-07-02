@@ -18,18 +18,6 @@ st.set_page_config(
 # ======================================================
 df = load_data()
 
-    """
-    Lee el archivo CSV y devuelve un DataFrame.
-    Streamlit almacenará el resultado en caché para
-    evitar leer el archivo en cada actualización.
-    """
-    df = pd.read_csv("data/ames_housing_clean.csv")
-    return df
-
-
-
-
-
 
 
 # ---------------------------------------------------
@@ -47,10 +35,6 @@ st.write(
 Dashboard interactivo para el análisis y predicción del precio de viviendas utilizando el dataset Ames Housing.
 """
 )
-
-
-# Cargar el dataset
-df = cargar_datos()
 
 
 
