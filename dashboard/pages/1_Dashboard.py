@@ -6,6 +6,7 @@
 import streamlit as st
 
 from utils.loader import load_data
+from utils.charts import create_histogram
 
 
 # ==========================================================
@@ -136,3 +137,7 @@ with col4:
 st.divider()
 
 st.info("✅ Dashboard listo para agregar visualizaciones.")
+
+fig = create_histogram(df_filtered)
+
+st.plotly_chart(fig)
