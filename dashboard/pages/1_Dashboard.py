@@ -141,3 +141,77 @@ st.info("✅ Dashboard listo para agregar visualizaciones.")
 fig = create_histogram(df_filtered)
 
 st.plotly_chart(fig)
+
+
+
+
+
+
+# ==========================================================
+# AGREGAR DESDE AQUÍ
+# ==========================================================
+
+st.divider()
+
+# ==========================================================
+# PRECIO PROMEDIO POR VECINDARIO
+# ==========================================================
+
+st.subheader("🏘️ Precio promedio por vecindario")
+
+avg_price = (
+    df_filtered
+    .groupby("Neighborhood")["SalePrice"]
+    .mean()
+    .sort_values(ascending=False)
+)
+
+st.bar_chart(avg_price)
+
+st.caption(
+    "Se observa el precio promedio de venta para cada vecindario "
+    "después de aplicar los filtros seleccionados."
+)
+
+st.divider()
+
+
+# ==========================================================
+# ÁREA HABITABLE VS PRECIO
+# ==========================================================
+
+st.subheader("📈 Área habitable vs Precio de venta")
+
+st.scatter_chart(
+    data=df_filtered,
+    x="Gr Liv Area",
+    y="SalePrice"
+)
+
+st.caption(
+    "Existe una tendencia positiva: conforme aumenta el área habitable, "
+    "el precio de venta también suele incrementarse."
+)
+
+st.divider()
+
+
+# ==========================================================
+# RESUMEN
+# ==========================================================
+
+st.subheader("📝 Resumen")
+
+st.success(
+    f"""
+Se analizaron **{len(df_filtered):,} viviendas** pertenecientes a
+**{df_filtered['Neighborhood'].nunique()} vecindarios**.
+
+El precio promedio de las viviendas seleccionadas es de
+**${df_filtered['SalePrice'].mean():,.0f}**.
+
+Las visualizaciones permiten identificar rápidamente la distribución
+de precios, comparar vecindarios y observar la relación entre el
+tamaño de la vivienda y su precio de venta.
+"""
+)
