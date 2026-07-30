@@ -165,7 +165,7 @@ st.header("👨‍💻 Autor")
 st.markdown("""
 **Proyecto desarrollado por:**
 
-Andy Gibran Porras Martinez.
+Andy Porras
 
 Materia:
 
@@ -193,7 +193,6 @@ st.success("""
 Se agradece al docente de la asignatura por la orientación durante el
 desarrollo del proyecto, así como a la comunidad de software libre por
 las herramientas utilizadas para la implementación del Dashboard.
-Y a miku nakano
 """)
 
 st.divider()
